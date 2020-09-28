@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CHMOD Calculator</title>
+    <!-- NOTE: 4 files for Bootstrap:
+      1. CSS
+      2. jQuery JavaScript (Bootstrap plans to lose this dependency)
+      3. popper JavaScript
+      4. Bootstrap JavaScript
+    -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="js/script.js"></script> <!-- my js file -->
+
+    <link href="css/sticky-footer.css" rel="stylesheet"> <!-- my css file -->
+
+  </head>
+  <body class="bg-dark text-light">
+
+    <header class="container">
+      <div class="header text-center mx-3 px-2 pt-3">
+        <h1 class="display-3">
+          CHMOD Calculator
+        </h1>
+        <p class="lead">
+          Allows you to quickly calculate Linux filesystem permissions as used by the chmod command line utility.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+
+
+      <div class="row  text-center mt-5 bg-light text-dark rounded mx-3 p-2">
+
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <h2>Owner</h2>
+          <div class="form-check pt-2">
+            <input class="form-check-input" type="checkbox" value="" id="1">
+            <label class="form-check-label" for="1">
+              Read
+            </label>
+          </div>
+          <div class="form-check pt-2 write-padding">
+            <input class="form-check-input" type="checkbox" value="" id="2">
+            <label class="form-check-label" for="2">
+              Write
+            </label>
+          </div>
+          <div class="form-check pt-2 execute-padding">
+            <input class="form-check-input" type="checkbox" value="" id="3">
+            <label class="form-check-label" for="3">
+              Execute
+            </label>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <h2>Group</h2>
+          <div class="form-check pt-2">
+            <input class="form-check-input" type="checkbox" value="" id="4">
+            <label class="form-check-label" for="4">
+              Read
+            </label>
+          </div>
+          <div class="form-check pt-2 write-padding">
+            <input class="form-check-input" type="checkbox" value="" id="5">
+            <label class="form-check-label" for="5">
+              Write
+            </label>
+          </div>
+          <div class="form-check pt-2 execute-padding">
+            <input class="form-check-input" type="checkbox" value="" id="6">
+            <label class="form-check-label" for="6">
+              Execute
+            </label>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <h2>Public</h2>
+          <div class="form-check pt-2">
+            <input class="form-check-input" type="checkbox" value="" id="7">
+            <label class="form-check-label" for="7">
+              Read
+            </label>
+          </div>
+          <div class="form-check pt-2 write-padding">
+            <input class="form-check-input" type="checkbox" value="" id="8">
+            <label class="form-check-label" for="8">
+              Write
+            </label>
+          </div>
+          <div class="form-check pt-2 execute-padding">
+            <input class="form-check-input" type="checkbox" value="" id="9">
+            <label class="form-check-label" for="9">
+              Execute
+            </label>
+          </div>
+       </div>
+
+      </div>
+
+      <div class="form-row mx-3 pt-5 ">
+        <div class="col-sm-4 col-xs-12 pt-2 text-center">
+          <span class="align-middle h4">Linux Permissions:</span>
+        </div>
+
+        <div class="col-sm-4 col-xs-12 pt-2 form-height">
+          <input class="form-control" type="text" placeholder="001" id="num">
+          <div class="error-msg hidden" id="let_num_text">
+            Must be 3 letters long in range [0,7]
+          </div>
+        </div>
+
+        <div class="col-sm-4 col-xs-12 pt-2 form-height">
+          <input class="form-control" type="text" placeholder="-rw-rw-rw-" id="let">
+          <div class="error-msg hidden" id="let_bad_text">
+            Must be 9 letters long and be in form rwxrwxrwx with '-' for empty permisions
+          </div>
+        </div>
+      </div>
+
+      <div class="row mx-3 border-top how-to">
+        <div class="col-12">
+          <p>
+            <span class="font-weight-bold">How to use</span>
+            <br/>
+            Check the desired boxes or directly enter a valid numeric value (e.g. 777) or symbolic notation (e.g. rwxrwxrwx) to see its value in other formats.
+          </p>
+          <p>
+            <span class="font-weight-bold">File Permissions</span>
+            <br/>
+            File permissions in Linux file system are managed in three distinct user classes: user/owner, group and others/public. Each class can have read, write and execute permissions. File permission can be represented in a symbolic or numeric (octal) format.
+          </p>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container pl-4">
+        <h5 class="text-muted">Isaac Lehman</h5>
+      </div>
+    </footer>
+
+  </body>
+</html>
