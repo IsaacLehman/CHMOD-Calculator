@@ -1,9 +1,15 @@
-COMP 442
-Homework 3: CHMOD Calculator
-By: Isaac Lehman
+CHMOD Calculator
 
+By: Isaac Lehman
 Completed on: 9/28/2020
-Time taken: 4 hours
+
+Uses: 
+- Bootsrap
+- js, css, html
+
+Features:
+- mobile friendly
+- interactive
 --------------------------------------------------------------------------------
 
 Description:
